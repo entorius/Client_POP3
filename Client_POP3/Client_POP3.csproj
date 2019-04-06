@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77E4345E-BA5F-48AF-9101-00BD3746C99C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client_POP3</RootNamespace>
+    <AssemblyName>Client_POP3</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LumiSoft.Net, Version=4.5.6712.42296, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumiSoft.Net.dll.4.5.6712.42292\lib\net45\Release\LumiSoft.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="CommandWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandWindow.Designer.cs">
+      <DependentUpon>CommandWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="credentials.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>credentials.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Encryptor.cs" />
+    <Compile Include="Login_Register_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Register_Screen.Designer.cs">
+      <DependentUpon>Login_Register_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGScreen.Designer.cs">
+      <DependentUpon>LOGScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newClient.cs" />
+    <Compile Include="RichTextBoxExtension.cs" />
+    <Compile Include="ServerConScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerConScreen.Designer.cs">
+      <DependentUpon>ServerConScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CommandWindow.resx">
+      <DependentUpon>CommandWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="credentials.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>credentials.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Register_Screen.resx">
+      <DependentUpon>Login_Register_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGScreen.resx">
+      <DependentUpon>LOGScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ServerConScreen.resx">
+      <DependentUpon>ServerConScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+    <Content Include="pic\google_logo.jpg" />
+    <Content Include="pic\google_logo_3.jpg" />
+    <Content Include="pic\logo .jpg" />
+    <None Include="Resources\server.jpg" />
+    <None Include="Resources\console1.png" />
+    <None Include="Resources\POPr.png" />
+    <None Include="Resources\logo .jpg" />
+    <None Include="Resources\google_logo_3.jpg" />
+    <None Include="Resources\google_logo.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
